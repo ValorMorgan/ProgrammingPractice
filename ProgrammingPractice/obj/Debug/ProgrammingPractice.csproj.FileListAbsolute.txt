@@ -40,6 +40,8 @@ C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\bin\Microsoft.Owin.Securi
 C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\bin\Microsoft.Web.Infrastructure.dll
 C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\bin\Newtonsoft.Json.dll
 C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\bin\Owin.dll
+C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\bin\ProgrammingPractice.Interfaces.dll
+C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\bin\ProgrammingPractice.Service.dll
 C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\bin\System.Web.Helpers.dll
 C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\bin\System.Web.Mvc.dll
 C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\bin\System.Web.Optimization.dll
@@ -48,6 +50,9 @@ C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\bin\System.Web.WebPages.D
 C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\bin\System.Web.WebPages.dll
 C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\bin\System.Web.WebPages.Razor.dll
 C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\bin\WebGrease.dll
+C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\bin\ProgrammingPractice.Model.dll
+C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\bin\ProgrammingPractice.Interfaces.pdb
+C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\bin\ProgrammingPractice.Service.pdb
 C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\bin\Microsoft.AI.DependencyCollector.xml
 C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\bin\Microsoft.AI.Web.xml
@@ -77,12 +82,7 @@ C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\bin\Microsoft.Owin.Securi
 C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\bin\Microsoft.Owin.Security.Google.xml
 C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\bin\Microsoft.Owin.Security.Twitter.xml
 C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\bin\ProgrammingPractice.Model.pdb
 C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\obj\Debug\ProgrammingPractice.csprojResolveAssemblyReference.cache
 C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\obj\Debug\ProgrammingPractice.dll
 C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\obj\Debug\ProgrammingPractice.pdb
-C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\bin\ProgrammingPractice.Interfaces.dll
-C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\bin\ProgrammingPractice.Interfaces.pdb
-C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\bin\ProgrammingPractice.Service.dll
-C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\bin\ProgrammingPractice.Model.dll
-C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\bin\ProgrammingPractice.Service.pdb
-C:\ws\Projects\ProgrammingPractice\ProgrammingPractice\bin\ProgrammingPractice.Model.pdb
