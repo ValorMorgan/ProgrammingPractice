@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div id="homepage-title-background" class="page-title-background"></div>
+
+<div id="homepage-title" class="page-title">
+    <h1>Programming Practice</h1>
+    <h3>By: <span class="text-italic">Joshua Morgan</span></h3>
+</div>
+
+<div id="homepage-description" class="page-description jumbotron">
+    <p class="p-tab">
+        This website was created as a practice environment to both practice for Microsoft's Exam 70-483 "Programming
+        in C#" as well as become better exposed to C# utilties and features and better learn Visual Studio's latest features in .NET and other tools.
+    </p>
+    <p class="p-tab">
+        Use the navigation on this page to access each specialized area to check on the feature's performance and operations
+        as well as review what each feature actually does.
+    </p>
+</div>
+
+<div id="homepage-navigation">
+    <div class="row homepage-navigation-row">
+        <div class="col-md-12 homepage-navigation-cell" onclick="location.href='@Url.Action("Index","MultiThread")';return false;">
+
+            <h3 class="homepage-navigation-title">MultiThreading</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="homepage-navigation-picture" src="#" />
+                </div>
+                <div class="col-md-8">
+                    <p class="homepage-navigation-description">Parallel processing to perform several tasks at the same time by using more of the system's resources.</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="row homepage-navigation-row">
+        <div class="col-md-12 homepage-navigation-cell" onclick="location.href='@Url.Action("Index","EventsCallbacks")';return false;">
+
+            <h3 class="homepage-navigation-title">Events & Callbacks</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="homepage-navigation-picture" src="#" />
+                </div>
+                <div class="col-md-8">
+                    <p class="homepage-navigation-description">Parallel processing to perform several tasks at the same time by using more of the system's resources.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+C:\ws\Projects\ProgrammingPractice\ProgrammingPractice.Model\bin\Debug\ProgrammingPractice.Model.dll
+C:\ws\Projects\ProgrammingPractice\ProgrammingPractice.Model\bin\Debug\ProgrammingPractice.Model.pdb
+C:\ws\Projects\ProgrammingPractice\ProgrammingPractice.Model\bin\Debug\ProgrammingPractice.Data.dll
+C:\ws\Projects\ProgrammingPractice\ProgrammingPractice.Model\bin\Debug\ProgrammingPractice.ErrorHandling.dll
+C:\ws\Projects\ProgrammingPractice\ProgrammingPractice.Model\bin\Debug\ProgrammingPractice.Interfaces.dll
+C:\ws\Projects\ProgrammingPractice\ProgrammingPractice.Model\bin\Debug\ProgrammingPractice.Data.pdb
+C:\ws\Projects\ProgrammingPractice\ProgrammingPractice.Model\bin\Debug\ProgrammingPractice.ErrorHandling.pdb
+C:\ws\Projects\ProgrammingPractice\ProgrammingPractice.Model\bin\Debug\ProgrammingPractice.Interfaces.pdb
+C:\ws\Projects\ProgrammingPractice\ProgrammingPractice.Model\obj\Debug\ProgrammingPractice.Model.csprojResolveAssemblyReference.cache
+C:\ws\Projects\ProgrammingPractice\ProgrammingPractice.Model\obj\Debug\ProgrammingPractice.Model.dll
+C:\ws\Projects\ProgrammingPractice\ProgrammingPractice.Model\obj\Debug\ProgrammingPractice.Model.pdb

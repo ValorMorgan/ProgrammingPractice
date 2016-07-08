@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "MultiThreading";
+}
+
+<div id="multiThread-title-background" class="page-title-background"></div>
+
+<div id="multiThread-title" class="page-title">
+    <h2>MultiThreading</h2>
+</div>
+
+<div id="multiThread-description" class="page-description jumbotron">
+    <p class="p-tab">
+        Welcome to multithreading!  Here, a test is setup that compares two elements being run in parellel.
+        The left one runs on only one (1) thread.  The right one runs on multiple threads (2+) and performs several operations at the same time.
+    </p>
+    <p class="p-tab">
+        Multithreading is where several operations occur at the same time as a result of the system providing
+        more resources to the task at hand.  In fact, multithreading is often the setup of any application without the developer making use of it.
+        The operating system (OS) provides multiple threads to each process or application that are distributed across a CPU's cores.  What you see
+        now is actually several background threads working while a single foreground thread draws new content to the screen in real-time.  Pretty neat!
+    </p>
+</div>
+
+<div id="multiThread-compare" class="row">
+    <div class="col-md-5 jumbotron">
+        <h2>Single Thread</h2>
+        <div id="multiThread-compare-left" class="multiThread-compare-content">
+
+        </div>
+        <div id="multiThread-compare-left-timer" class="multiThread-timer"></div>
+    </div>
+
+    <div class="col-md-5 jumbotron">
+        <h2>MultiThread</h2>
+        <div id="multiThread-compare-right" class="multiThread-compare-content">
+
+        </div>
+        <div id="multiThread-compare-right-timer" class="multiThread-timer"></div>
+    </div>
+</div>
+
+<button id="multiThread-startOver" class="button-big-center button-green">Start Over</button>
+
+@(Scripts.Render("~/bundles/multiThread"))
