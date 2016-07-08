@@ -193,9 +193,13 @@ textarea {
 }
 
 .multiThread-compare-content {
-    width: 400px;
-    height: 400px;
     margin: 10px auto;
+}
+
+.multiThread-compare-content > svg {
+    min-height: 300px;
+    margin: 0 auto;
+    display: block;
 }
 
 .multiThread-timer {

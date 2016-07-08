@@ -20,16 +20,17 @@ namespace ProgrammingPractice
                         "~/Scripts/Library/Modernizer/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/Library/BootStrap/bootstrap.js",
-                      "~/Scripts/Library/Respond/respond.js"));
+                        "~/Scripts/Library/BootStrap/bootstrap.js",
+                        "~/Scripts/Library/Respond/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/multiThread").Include(
-                      "~/Scripts/Library/JQuery/Timer/timer.jquery.min.js",
-                      "~/Scripts/App/MultiThread.js"));
+                        "~/Scripts/Library/JQuery/Timer/timer.jquery.min.js",
+                        "~/Scripts/Library/LiquidFillGauge/liquidFillGauge.js",
+                        "~/Scripts/App/MultiThread.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/StyleSheets/bootstrap.css",
-                      "~/Content/StyleSheets/site.css"));
+                        "~/Content/StyleSheets/bootstrap.css",
+                        "~/Content/StyleSheets/site.css"));
         }
     }
 }

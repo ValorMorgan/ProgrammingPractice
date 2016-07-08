@@ -32,9 +32,14 @@ namespace ProgrammingPractice.Model
         {
             try
             {
-                int i = 0;
+                int totalJobs = 100;
 
+                Parallel.For(0, totalJobs, i =>
+                {
+                    Thread.Sleep(1000);
+                });
 
+                Task.WaitAll();
             }
             catch (Exception ex)
             {

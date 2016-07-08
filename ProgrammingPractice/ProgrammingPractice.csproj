@@ -211,10 +211,8 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\StyleSheets\bootstrap-theme.css" />
+    <Content Include="Content\StyleSheets\bootstrap-theme.min.css" />
     <Content Include="Content\StyleSheets\bootstrap.css" />
     <Content Include="Content\StyleSheets\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -240,13 +238,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\StyleSheets\bootstrap.min.css.map" />
+    <Content Include="Content\StyleSheets\bootstrap.css.map" />
+    <Content Include="Content\StyleSheets\bootstrap-theme.min.css.map" />
+    <Content Include="Content\StyleSheets\bootstrap-theme.css.map" />
     <Content Include="Scripts\Library\JQuery\Timer\timer.jquery.min.js" />
     <Content Include="Scripts\Library\JQuery\Validate\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\Library\JQuery\Validate\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Library\LiquidFillGauge\liquidFillGauge.js" />
     <Content Include="Scripts\Library\Modernizer\modernizr-2.8.3.js" />
     <Content Include="Scripts\Library\Respond\respond.js" />
     <Content Include="Scripts\Library\Respond\respond.matchmedia.addListener.js" />
