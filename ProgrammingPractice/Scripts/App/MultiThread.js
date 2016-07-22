@@ -36,13 +36,13 @@ var setFillGauges = function () {
     fillGaugeConfig.waveAnimate = true;
     fillGaugeConfig.waveAnimateTime = 2000;
 
-    if (gaugeLeft == null || gaugeLeft == '' || gaugeLeft.length <= 0) {
+    if (!exists(gaugeLeft)) {
         gaugeLeft = loadLiquidFillGauge('multiThread-fillGauge-left', 0, fillGaugeConfig);
     } else {
         gaugeLeft.update(0);
     }
 
-    if (gaugeRight == null || gaugeRight == '' || gaugeRight.length <= 0) {
+    if (!exists(gaugeRight)) {
         gaugeRight = loadLiquidFillGauge('multiThread-fillGauge-right', 0, fillGaugeConfig);
     } else {
         gaugeRight.update(0);
@@ -58,8 +58,9 @@ var startLeft = function () {
         url: '/MultiThreadAjax/SingleThread',
         async: true
     }).fail(function (xhr) {
-        $(element).css('color', 'red');
-        $(element).text('Failed');
+        $('#multiThread-compare-left').empty();
+        $('#multiThread-compare-left').prepend('<img class="fillGauage-Error" src="~/Content/Images/FillGaugeError.png" />');
+        gaugeLeft = null;
         $('#multiThread-compare-left-timer').timer('pause');
     }).done(function (status) {
         gaugeLeft.update(100);
@@ -76,8 +77,9 @@ var startRight = function () {
         url: '/MultiThreadAjax/MultiThread',
         async: true
     }).fail(function (xhr) {
-        $(element).css('color', 'red');
-        $(element).text('Failed');
+        $('#multiThread-compare-right').empty();
+        $('#multiThread-compare-right').prepend('<img class="fillGauage-Error" src="~/Content/Images/FillGaugeError.png" />');
+        gaugeRight = null;
         $('#multiThread-compare-right-timer').timer('pause');
     }).done(function (status) {
         gaugeRight.update(100);

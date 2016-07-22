@@ -23,6 +23,9 @@ namespace ProgrammingPractice
                         "~/Scripts/Library/BootStrap/bootstrap.js",
                         "~/Scripts/Library/Respond/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/site").Include(
+                        "~/Scripts/App/Site.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/multiThread").Include(
                         "~/Scripts/Library/JQuery/Timer/timer.jquery.min.js",
                         "~/Scripts/Library/LiquidFillGauge/liquidFillGauge.js",
