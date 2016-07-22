@@ -1,0 +1,237 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: #c4c4c4;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/*===========================
+        General
+===========================*/
+.hr-black {
+    border-top: 1px solid black;
+}
+
+.text-italic {
+    font-style: italic;
+}
+
+.p-tab::first-letter {
+    margin-left: 1em;
+}
+
+.button-big-center {
+    width: 80%;
+    height: 80px;
+    margin: 10px auto;
+    display: block;
+    font-size: 32px;
+}
+
+.button-purple {
+    background-color: rebeccapurple;
+    color: white;
+    border-radius: 5px;
+}
+
+.button-green {
+    background-color: rgba(28, 108, 43, 0.85);
+    color: white;
+    border-radius: 5px;
+}
+
+.page-title {
+    color: white;
+    font-size: 36px;
+}
+
+.page-title-background {
+    width: 110%;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    background-color: rebeccapurple;
+    position: absolute;
+    left: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.page-description {
+    margin: 15px auto;
+    padding: 15px;
+    font-size: 18px;
+    display: block;
+    clear: both;
+}
+
+/*===========================
+        Specific
+===========================*/
+
+/*=================
+    Homepage
+=================*/
+#homepage-title-background {
+    height: 300px;
+}
+
+#homepage-title {
+    height: 300px;
+    margin: 0;
+    padding: 50px 0 0 0;
+}
+
+#homepage-title > h1 {
+    font-size: 72px;
+}
+
+.homepage-navigation-row {
+    margin: 0 11% 10px 9%;
+    border-radius: 5px;
+    background-color: rgba(28, 108, 43, 0.85);
+    box-shadow: rgba(0, 0, 0, 0.50) 8px 8px 10px;
+}
+
+.homepage-navigation-row:nth-of-type(odd) {
+    margin: 0 9% 10px 11%;
+    background-color: rgba(44, 156, 65, 0.75);
+}
+
+.homepage-navigation-cell:hover {
+    cursor: pointer;
+    border: 3px solid rgba(0, 0, 0, 0.33);
+    border-radius: 5px;
+    padding: 12px
+}
+
+.homepage-navigation-cell:active {
+    box-shadow: rgba(0, 0, 0, 0.25) 4px 4px 10px;
+}
+
+.homepage-navigation-cell {
+    height: 180px;
+    width: 100%;
+    margin: 0;
+    padding: 15px;
+}
+
+.homepage-navigation-cell > .row {
+    height: 70%;
+    width: 100%;
+    margin: 0;
+    padding: 0 15px;
+}
+
+.homepage-navigation-cell > .row > div {
+    height: 100%;
+    padding: 0;
+}
+
+.homepage-navigation-title {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 32px;
+}
+
+.homepage-navigation-picture {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    display: block;
+}
+
+.homepage-navigation-description {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    padding-left: 15px;
+    font-size: 18px;
+}
+
+/*=================
+    MultiThread
+=================*/
+#multiThread-title-background {
+    height: 100px;
+}
+
+#multiThread-title {
+    height: 100px;
+    margin: 0;
+    padding: 15px 0 0 0;
+}
+
+#multiThread-compare {
+    width: 100%;
+    margin: 0;
+}
+
+#multiThread-compare > div {
+    width: 48.246%;
+    margin: 0 10px;
+    padding: 15px;
+}
+
+.multiThread-compare-content {
+    margin: 10px auto;
+}
+
+.multiThread-compare-content > svg {
+    min-height: 300px;
+    margin: 0 auto;
+    display: block;
+}
+
+.multiThread-timer {
+    width: 50%;
+    padding: 0;
+    margin: 10px auto;
+    background-color: black;
+    border: 3px ridge #808080;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+}
+
+#multiThread-startOver {
+    width: 100%;
+    margin-top: 10px;
+    border: 0;
+    clear: both;
+    box-shadow: rgba(0, 0, 0, 0.50) 8px 8px 10px;
+}
+
+#multiThread-startOver:hover {
+    border: 3px solid rgba(0, 0, 0, 0.33);
+}
+
+#multiThread-startOver:active {
+    border: 3px solid rgba(0, 0, 0, 0.33);
+    box-shadow: rgba(0, 0, 0, 0.75) 4px 4px 10px;
+    outline: none;
+}
+
+#multiThread-startOver:focus,
+#multiThread-startOver:visited {
+    outline: none;
+}

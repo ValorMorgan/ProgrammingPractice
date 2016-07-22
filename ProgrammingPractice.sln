@@ -72,4 +72,31 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://devtfs01.devqa.farm:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ProgrammingPractice\\ProgrammingPractice.csproj
+		SccProjectName1 = ProgrammingPractice
+		SccLocalPath1 = ProgrammingPractice
+		SccProjectUniqueName2 = ProgrammingPractice.Tests\\ProgrammingPractice.Tests.csproj
+		SccProjectName2 = ProgrammingPractice.Tests
+		SccLocalPath2 = ProgrammingPractice.Tests
+		SccProjectUniqueName3 = ProgrammingPractice.Interfaces\\ProgrammingPractice.Interfaces.csproj
+		SccProjectName3 = ProgrammingPractice.Interfaces
+		SccLocalPath3 = ProgrammingPractice.Interfaces
+		SccProjectUniqueName4 = ProgrammingPractice.Service\\ProgrammingPractice.Service.csproj
+		SccProjectName4 = ProgrammingPractice.Service
+		SccLocalPath4 = ProgrammingPractice.Service
+		SccProjectUniqueName5 = ProgrammingPractice.Model\\ProgrammingPractice.Model.csproj
+		SccProjectName5 = ProgrammingPractice.Model
+		SccLocalPath5 = ProgrammingPractice.Model
+		SccProjectUniqueName6 = ProgrammingPractice.Data\\ProgrammingPractice.Data.csproj
+		SccProjectName6 = ProgrammingPractice.Data
+		SccLocalPath6 = ProgrammingPractice.Data
+		SccProjectUniqueName7 = ProgrammingPractice.ErrorHandling\\ProgrammingPractice.ErrorHandling.csproj
+		SccProjectName7 = ProgrammingPractice.ErrorHandling
+		SccLocalPath7 = ProgrammingPractice.ErrorHandling
+	EndGlobalSection
 EndGlobal
