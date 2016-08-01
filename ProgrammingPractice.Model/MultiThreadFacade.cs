@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -9,6 +10,10 @@ namespace ProgrammingPractice.Model
 {
     public static class MultiThreadFacade
     {
+        #region VARIABLES
+        private static int workload { get { return 10; } }
+        #endregion
+
         #region METHODS
         public static void SingleThread()
         {
@@ -16,7 +21,7 @@ namespace ProgrammingPractice.Model
             {
                 int i = 0;
 
-                while (i < 100)
+                while (i < workload)
                 {
                     i++;
                     Thread.Sleep(1000);
@@ -32,9 +37,7 @@ namespace ProgrammingPractice.Model
         {
             try
             {
-                int totalJobs = 100;
-
-                Parallel.For(0, totalJobs, i =>
+                Parallel.For(0, workload, i =>
                 {
                     Thread.Sleep(1000);
                 });

@@ -1,22 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
+using System.Threading.Tasks;
+using Microsoft.AspNet.SignalR;
 using ProgrammingPractice.Service;
+using ProgrammingPractice.Hubs;
+using System.Reflection;
 
 namespace ProgrammingPractice.Controllers.Ajax_Controllers
 {
     public class MultiThreadAjaxController : Controller
     {
         private object ajaxSuccess = new { success = true, message = string.Empty };
+        private Page currentPage {
+            get
+            {
+                //Page page = System.Web.HttpContext.Current.Handler as Page;
+                var page = new Page();
+                var requestField = typeof(Page).GetField("_request", BindingFlags.Instance | BindingFlags.NonPublic);
+                requestField.SetValue(page, System.Web.HttpContext.Current.Request);
 
-        public JsonResult SingleThread()
+                if (page == null)
+                    throw new HttpException("Current Page object could not be found.");
+                return page;
+            }
+        }
+
+        [HttpPost]
+        public async Task<JsonResult> SingleThreadAsync()
         {
             try
             {
-                MultiThreadService.SingleThread();
+                await Task.Run(() => MultiThreadService.SingleThread());
             }
             catch (Exception ex)
             {
@@ -28,11 +48,12 @@ namespace ProgrammingPractice.Controllers.Ajax_Controllers
             return Json(ajaxSuccess);
         }
 
-        public JsonResult MultiThread()
+        [HttpPost]
+        public async Task<JsonResult> MultiThreadAsyc()
         {
             try
             {
-                MultiThreadService.MultiThread();
+                await Task.Run(() => MultiThreadService.MultiThread());
             }
             catch (Exception ex)
             {

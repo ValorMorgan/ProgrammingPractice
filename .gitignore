@@ -12,6 +12,8 @@
 *.vspscc
 *.vssscc
 *.force
+bin/
+obj/
 
 # Packages #
 ############
