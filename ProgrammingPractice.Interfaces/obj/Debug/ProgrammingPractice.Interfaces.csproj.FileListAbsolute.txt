@@ -1,4 +1,0 @@
-C:\ws\Projects\ProgrammingPractice\ProgrammingPractice.Interfaces\bin\Debug\ProgrammingPractice.Interfaces.dll
-C:\ws\Projects\ProgrammingPractice\ProgrammingPractice.Interfaces\bin\Debug\ProgrammingPractice.Interfaces.pdb
-C:\ws\Projects\ProgrammingPractice\ProgrammingPractice.Interfaces\obj\Debug\ProgrammingPractice.Interfaces.dll
-C:\ws\Projects\ProgrammingPractice\ProgrammingPractice.Interfaces\obj\Debug\ProgrammingPractice.Interfaces.pdb
