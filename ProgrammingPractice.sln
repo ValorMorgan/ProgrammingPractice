@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammingPractice.UI.MVC", "ProgrammingPractice\ProgrammingPractice.UI.MVC.csproj", "{81387AC6-F21F-4F88-97D7-3E5379EB8C74}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammingPractice.UI.MVC", "ProgrammingPractice.UI.MVC\ProgrammingPractice.UI.MVC.csproj", "{81387AC6-F21F-4F88-97D7-3E5379EB8C74}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B95D6D7B-9D69-4ABE-8312-4E941CF4EF25} = {B95D6D7B-9D69-4ABE-8312-4E941CF4EF25}
 	EndProjectSection
@@ -32,7 +32,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammingPractice.Data", 
 		{B65E72F9-396D-47F2-A2E7-6EFFC8261356} = {B65E72F9-396D-47F2-A2E7-6EFFC8261356}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammingPractice.Error", "ProgrammingPractice.ErrorHandling\ProgrammingPractice.Error.csproj", "{DFB16F4B-6000-46DB-8C9F-A72BEFC61E8A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammingPractice.Error", "ProgrammingPractice.Error\ProgrammingPractice.Error.csproj", "{DFB16F4B-6000-46DB-8C9F-A72BEFC61E8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
