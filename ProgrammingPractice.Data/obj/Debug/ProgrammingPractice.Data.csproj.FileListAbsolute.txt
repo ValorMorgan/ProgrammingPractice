@@ -1,9 +1,0 @@
-C:\ws\Projects\ProgrammingPractice\ProgrammingPractice.Data\bin\Debug\ProgrammingPractice.Data.dll
-C:\ws\Projects\ProgrammingPractice\ProgrammingPractice.Data\bin\Debug\ProgrammingPractice.Data.pdb
-C:\ws\Projects\ProgrammingPractice\ProgrammingPractice.Data\bin\Debug\ProgrammingPractice.ErrorHandling.dll
-C:\ws\Projects\ProgrammingPractice\ProgrammingPractice.Data\bin\Debug\ProgrammingPractice.Interfaces.dll
-C:\ws\Projects\ProgrammingPractice\ProgrammingPractice.Data\bin\Debug\ProgrammingPractice.ErrorHandling.pdb
-C:\ws\Projects\ProgrammingPractice\ProgrammingPractice.Data\bin\Debug\ProgrammingPractice.Interfaces.pdb
-C:\ws\Projects\ProgrammingPractice\ProgrammingPractice.Data\obj\Debug\ProgrammingPractice.Data.csprojResolveAssemblyReference.cache
-C:\ws\Projects\ProgrammingPractice\ProgrammingPractice.Data\obj\Debug\ProgrammingPractice.Data.dll
-C:\ws\Projects\ProgrammingPractice\ProgrammingPractice.Data\obj\Debug\ProgrammingPractice.Data.pdb
