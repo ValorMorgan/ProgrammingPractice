@@ -6,13 +6,17 @@
            Variables
 =============================*/
 var timersInitiated = false;
-var gaugeLeft = null;
-var gaugeRight = null;
+var gauagSingleThread = null;
+var gaugeMultiThread = null;
 
 /*=============================
            Methods
 =============================*/
-var setTimers = function (reset) {
+/** Sets the timers to begin counting up from 0.
+ *  Parameters:
+ *    reset: true/false if the timers should be reset to 0.
+ */
+function SetTimers(reset) {
     if (timersInitiated && reset) {
         $('.multiThread-timer').timer('remove');
     }
@@ -25,7 +29,10 @@ var setTimers = function (reset) {
     timersInitiated = true;
 }
 
-var setFillGauges = function () {
+/** Sets the fill gauges with their default style as well as
+ *  resetting their value to 0.
+ */
+function SetFillGauges() {
     var fillGaugeConfig = liquidFillGaugeDefaultSettings();
     fillGaugeConfig.circleColor = '#2c9c41';
     fillGaugeConfig.textColor = '#2c9c41';
@@ -36,70 +43,107 @@ var setFillGauges = function () {
     fillGaugeConfig.waveAnimate = true;
     fillGaugeConfig.waveAnimateTime = 2000;
 
-    if (!exists(gaugeLeft)) {
-        gaugeLeft = loadLiquidFillGauge('multiThread-fillGauge-left', 0, fillGaugeConfig);
+    if (!Exists(gauagSingleThread)) {
+        gauagSingleThread = loadLiquidFillGauge('multiThread-fillGauge-singleThread', 0, fillGaugeConfig);
     } else {
-        gaugeLeft.update(0);
+        gauagSingleThread.update(0);
     }
 
-    if (!exists(gaugeRight)) {
-        gaugeRight = loadLiquidFillGauge('multiThread-fillGauge-right', 0, fillGaugeConfig);
+    if (!Exists(gaugeMultiThread)) {
+        gaugeMultiThread = loadLiquidFillGauge('multiThread-fillGauge-multiThread', 0, fillGaugeConfig);
     } else {
-        gaugeRight.update(0);
+        gaugeMultiThread.update(0);
     }
 }
 
-var startLeft = function () {
-    var element = $('#multiThread-compare-left');
+/** Begins the SingleThread fill gauge by
+ *  calling the server to perform an operation.
+ *  Also adds a window.unload event to cancel
+ *  the operation if it is still going.
+ */
+function StartSingleThread() {
+    var fillgauge = $('#multiThread-compare-multiThread');
 
-    $.ajax({
+    var ajax = $.ajax({
         type: 'POST',
         dataType: 'json',
         url: '/MultiThreadAjax/SingleThread',
+        data: {
+            clientId: clientId
+        },
         async: true
     }).fail(function (xhr) {
-        $('#multiThread-compare-left').empty();
-        $('#multiThread-compare-left').prepend('<img class="fillGauage-Error" src="~/Content/Images/FillGaugeError.png" />');
-        gaugeLeft = null;
-        $('#multiThread-compare-left-timer').timer('pause');
-    }).done(function (status) {
-        gaugeLeft.update(100);
-        $('#multiThread-compare-left-timer').timer('pause');
+        $(fillgauge).empty();
+        $(fillgauge).prepend('<img class="fillGauge-Error" src="Content/Images/FillGaugeError.png" />');
+        gauagSingleThread = null;
+        $('#multiThread-compare-singleThread-timer').timer('pause');
+    }).done(function () {
+        gauagSingleThread.update(100);
+        $('#multiThread-compare-singleThread-timer').timer('pause');
+    });
+
+    $(window).unload(function () {
+        ajax.abort();
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            url: '/MultiThreadAjax/CancelSingleThread',
+            data: {
+                clientId: clientId
+            },
+            async: true
+        });
     });
 }
 
-var startRight = function () {
-    var element = $('#multiThread-compare-right');
+/** Begins the MultiThread fill gauge by
+ *  calling the server to perform an operation.
+ *  Also adds a window.unload event to cancel
+ *  the operation if it is still going.
+ */
+function StartMultiThread() {
+    var fillgauge = $('#multiThread-compare-multiThread');
 
-    $.ajax({
+    var ajax = $.ajax({
         type: 'POST',
         dataType: 'json',
         url: '/MultiThreadAjax/MultiThread',
+        data: {
+            clientId: clientId
+        },
         async: true
     }).fail(function (xhr) {
-        $('#multiThread-compare-right').empty();
-        $('#multiThread-compare-right').prepend('<img class="fillGauage-Error" src="~/Content/Images/FillGaugeError.png" />');
-        gaugeRight = null;
-        $('#multiThread-compare-right-timer').timer('pause');
-    }).done(function (status) {
-        gaugeRight.update(100);
-        $('#multiThread-compare-right-timer').timer('pause');
+        $(fillgauge).empty();
+        $(fillgauge).prepend('<img class="fillGauge-Error" src="Content/Images/FillGaugeError.png" />');
+        gaugeMultiThread = null;
+        $('#multiThread-compare-multiThread-timer').timer('pause');
+    }).done(function () {
+        gaugeMultiThread.update(100);
+        $('#multiThread-compare-multiThread-timer').timer('pause');
+    });
+
+    $(window).unload(function () {
+        ajax.abort();
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            url: '/MultiThreadAjax/CancelMultiThread',
+            data: {
+                clientId: clientId
+            },
+            async: true
+        });
     });
 }
 
 /*=============================
            Events
 =============================*/
-$(document).ready(function () {
-    setFillGauges();
-    setTimers();
-    startLeft();
-    startRight();
-});
-
-$('#multiThread-startOver').click(function () {
-    setFillGauges();
-    setTimers(true);
-    startLeft();
-    startRight();
+/** Initial load event to initialize gauages and timers
+ */
+$(window).load(function () {
+    SetFillGauges();
+    SetTimers();
+    StartSingleThread();
+    StartMultiThread();
 });

@@ -1,35 +1,48 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
+using System.Configuration;
+using ProgrammingPractice.Error;
 using ProgrammingPractice.Model;
 
 namespace ProgrammingPractice.Service
 {
+    /// <summary>
+    /// Access point from UI to perform operations for
+    /// MultiThreading.
+    /// </summary>
     public static class MultiThreadService
     {
         #region METHODS
-        public static void SingleThread()
+        /// <summary>
+        /// Test on processing the workload in a single thread.
+        /// </summary>
+        public static void SingleThread(CancellationToken token)
         {
             try
             {
-                MultiThreadFacade.SingleThread();
+                MultiThreadFacade.SingleThread(token);
             }
             catch (Exception ex)
             {
+                ex.Data[ConfigurationManager.AppSettings["ExceptionDomainStackTrace"]] = ErrorService.LocalDomainStackTrace(ex, typeof(MultiThreadService));
+                ErrorService.LogException(ex);
                 throw ex;
             }
         }
 
-        public static void MultiThread()
+        /// <summary>
+        /// Test on processing the workload in multithread.
+        /// </summary>
+        public static void MultiThread(CancellationToken token)
         {
             try
             {
-                MultiThreadFacade.MultiThread();
+                MultiThreadFacade.MultiThread(token);
             }
             catch (Exception ex)
             {
+                ex.Data[ConfigurationManager.AppSettings["ExceptionDomainStackTrace"]] = ErrorService.LocalDomainStackTrace(ex, typeof(MultiThreadService));
+                ErrorService.LogException(ex);
                 throw ex;
             }
         }

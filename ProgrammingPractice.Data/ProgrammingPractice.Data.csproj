@@ -11,6 +11,10 @@
     <AssemblyName>ProgrammingPractice.Data</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,9 +47,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProgrammingPractice.ErrorHandling\ProgrammingPractice.ErrorHandling.csproj">
+    <ProjectReference Include="..\ProgrammingPractice.ErrorHandling\ProgrammingPractice.Error.csproj">
       <Project>{dfb16f4b-6000-46db-8c9f-a72befc61e8a}</Project>
-      <Name>ProgrammingPractice.ErrorHandling</Name>
+      <Name>ProgrammingPractice.Error</Name>
     </ProjectReference>
     <ProjectReference Include="..\ProgrammingPractice.Interfaces\ProgrammingPractice.Interfaces.csproj">
       <Project>{b65e72f9-396d-47f2-a2e7-6effc8261356}</Project>

@@ -25,22 +25,20 @@
 <div id="multiThread-compare" class="row">
     <div class="col-md-5 jumbotron">
         <h2>Single Thread</h2>
-        <div id="multiThread-compare-left" class="multiThread-compare-content">
-            <svg id="multiThread-fillGauge-left" width="90%" height="90%"></svg>
+        <div id="multiThread-compare-singleThread" class="multiThread-compare-content">
+            <svg id="multiThread-fillGauge-singleThread" width="90%" height="90%"></svg>
         </div>
-        <div id="multiThread-compare-left-timer" class="multiThread-timer"></div>
+        <div id="multiThread-compare-singleThread-timer" class="multiThread-timer"></div>
     </div>
 
     <div class="col-md-5 jumbotron">
         <h2>MultiThread</h2>
-        <div id="multiThread-compare-right" class="multiThread-compare-content">
-            <svg id="multiThread-fillGauge-right" width="90%" height="90%"></svg>
+        <div id="multiThread-compare-multiThread" class="multiThread-compare-content">
+            <svg id="multiThread-fillGauge-multiThread" width="90%" height="90%"></svg>
         </div>
-        <div id="multiThread-compare-right-timer" class="multiThread-timer"></div>
+        <div id="multiThread-compare-multiThread-timer" class="multiThread-timer"></div>
     </div>
 </div>
-
-<button id="multiThread-startOver" class="button-big-center button-green">Start Over</button>
 
 <script src="https://d3js.org/d3.v3.js"></script>
 @(Scripts.Render("~/bundles/multiThread"))

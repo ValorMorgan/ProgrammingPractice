@@ -13,8 +13,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProgrammingPractice</RootNamespace>
-    <AssemblyName>ProgrammingPractice</AssemblyName>
+    <RootNamespace>ProgrammingPractice.UI.MVC</RootNamespace>
+    <AssemblyName>ProgrammingPractice.UI.MVC</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -25,6 +25,10 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,6 +48,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -196,6 +204,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Ajax Controllers\ClientInformationAjaxController.cs" />
     <Compile Include="Controllers\Ajax Controllers\MultiThreadAjaxController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -207,11 +216,11 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\JavaScriptWorker.cs" />
     <Compile Include="Services\WebConfigurationPropertyService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Readme\Elmah.txt" />
     <Content Include="Content\Images\FillGaugeError.png" />
     <Content Include="Content\StyleSheets\bootstrap-theme.css" />
     <Content Include="Content\StyleSheets\bootstrap-theme.min.css" />
@@ -221,9 +230,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\StyleSheets\Site.css" />
+    <Content Include="Scripts\App\ProgressHub.js" />
     <Content Include="Scripts\App\MultiThread.js" />
     <None Include="Scripts\Library\JQuery\jquery-2.2.4.intellisense.js" />
     <Content Include="Scripts\App\Site.js" />
+    <Content Include="Scripts\Library\JQuery\SignalR\jquery.signalR-2.2.1.js" />
+    <Content Include="Scripts\Library\JQuery\SignalR\jquery.signalR-2.2.1.min.js" />
     <Content Include="Scripts\Library\JQuery\jquery-2.2.4.js" />
     <Content Include="Scripts\Library\JQuery\jquery-2.2.4.min.js" />
     <Content Include="Scripts\Library\BootStrap\bootstrap.js" />
@@ -255,7 +267,9 @@
     <Content Include="Scripts\Library\Respond\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\Library\Respond\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -292,6 +306,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ClientInformationAjax\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

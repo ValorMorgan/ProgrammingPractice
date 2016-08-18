@@ -196,6 +196,10 @@ textarea {
     margin: 10px auto;
 }
 
+.multiThread-compare-content > img {
+    height: 100%;
+}
+
 .multiThread-compare-content > svg {
     min-height: 300px;
     margin: 0 auto;
@@ -234,4 +238,9 @@ textarea {
 #multiThread-startOver:focus,
 #multiThread-startOver:visited {
     outline: none;
+}
+
+.fillGauge-Error {
+    display: block;
+    margin: 0 auto;
 }

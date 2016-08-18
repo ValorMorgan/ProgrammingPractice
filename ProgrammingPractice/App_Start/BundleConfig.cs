@@ -1,13 +1,17 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace ProgrammingPractice
+namespace ProgrammingPractice.UI.MVC
 {
     public class BundleConfig
     {
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                        "~/Content/StyleSheets/bootstrap.css",
+                        "~/Content/StyleSheets/site.css"));
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/Library/JQuery/jquery-{version}.js"));
 
@@ -31,9 +35,9 @@ namespace ProgrammingPractice
                         "~/Scripts/Library/LiquidFillGauge/liquidFillGauge.js",
                         "~/Scripts/App/MultiThread.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                        "~/Content/StyleSheets/bootstrap.css",
-                        "~/Content/StyleSheets/site.css"));
+            bundles.Add(new ScriptBundle("~/bundles/SignalR").Include(
+                        "~/Scripts/Library/Jquery/SignalR/jquery.signalR-2.2.1.min.js",
+                        "~/Scripts/App/ProgressHub.js"));
         }
     }
 }

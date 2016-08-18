@@ -8,7 +8,12 @@
 *.so
 *.pdb
 *.cache
-*/obj/*
+*.csproj.FileListAbsolute.txt
+*.vspscc
+*.vssscc
+*.force
+bin/
+obj/
 
 # Packages #
 ############

@@ -6,8 +6,7 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/site")
-    @using ProgrammingPractice.Services;
+    @using ProgrammingPractice.UI.MVC.Services;
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -33,6 +32,7 @@
 
     <!-- Placed before body to use JQuery within body -->
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/site")
 
     <div class="container body-content">
         @RenderBody()
