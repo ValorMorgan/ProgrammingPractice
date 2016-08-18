@@ -9,8 +9,8 @@
     <ProjectGuid>{7AD4832A-7567-4FA0-9B70-ACC4C5DEB49E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProgrammingPractice.Tests</RootNamespace>
-    <AssemblyName>ProgrammingPractice.Tests</AssemblyName>
+    <RootNamespace>ProgrammingPractice.UI.MVC.Tests</RootNamespace>
+    <AssemblyName>ProgrammingPractice.UI.MVC.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -38,7 +38,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -86,6 +88,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Ajax Controllers\MultiThredAjaxControllerTest.cs" />
+    <Compile Include="Controllers\MultiThreadControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
   </ItemGroup>
@@ -96,8 +100,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProgrammingPractice\ProgrammingPractice.UI.MVC.csproj">
-      <Project>{81387AC6-F21F-4F88-97D7-3E5379EB8C74}</Project>
+    <ProjectReference Include="..\ProgrammingPractice.Error\ProgrammingPractice.Error.csproj">
+      <Project>{dfb16f4b-6000-46db-8c9f-a72befc61e8a}</Project>
+      <Name>ProgrammingPractice.Error</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProgrammingPractice.UI.MVC\ProgrammingPractice.UI.MVC.csproj">
+      <Project>{81387ac6-f21f-4f88-97d7-3e5379eb8c74}</Project>
       <Name>ProgrammingPractice.UI.MVC</Name>
     </ProjectReference>
   </ItemGroup>

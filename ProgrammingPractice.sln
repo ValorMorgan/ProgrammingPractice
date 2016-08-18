@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammingPractice.UI.MVC"
 		{B95D6D7B-9D69-4ABE-8312-4E941CF4EF25} = {B95D6D7B-9D69-4ABE-8312-4E941CF4EF25}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammingPractice.Tests", "ProgrammingPractice.Tests\ProgrammingPractice.Tests.csproj", "{7AD4832A-7567-4FA0-9B70-ACC4C5DEB49E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammingPractice.UI.MVC.Tests", "ProgrammingPractice.Tests\ProgrammingPractice.UI.MVC.Tests.csproj", "{7AD4832A-7567-4FA0-9B70-ACC4C5DEB49E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammingPractice.Interfaces", "ProgrammingPractice.Interfaces\ProgrammingPractice.Interfaces.csproj", "{B65E72F9-396D-47F2-A2E7-6EFFC8261356}"
 EndProject
@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammingPractice.Data", 
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammingPractice.Error", "ProgrammingPractice.Error\ProgrammingPractice.Error.csproj", "{DFB16F4B-6000-46DB-8C9F-A72BEFC61E8A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{89B13F1E-5E87-48A6-89F1-E027D5D8F917}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,5 +73,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7AD4832A-7567-4FA0-9B70-ACC4C5DEB49E} = {89B13F1E-5E87-48A6-89F1-E027D5D8F917}
 	EndGlobalSection
 EndGlobal

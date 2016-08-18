@@ -50,7 +50,7 @@
     <Compile Include="WebService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProgrammingPractice.ErrorHandling\ProgrammingPractice.Error.csproj">
+    <ProjectReference Include="..\ProgrammingPractice.Error\ProgrammingPractice.Error.csproj">
       <Project>{dfb16f4b-6000-46db-8c9f-a72befc61e8a}</Project>
       <Name>ProgrammingPractice.Error</Name>
     </ProjectReference>

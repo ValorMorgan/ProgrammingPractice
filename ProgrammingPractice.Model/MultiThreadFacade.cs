@@ -12,7 +12,7 @@ namespace ProgrammingPractice.Model
         /// <summary>
         /// The cumulative workload for the tasks.
         /// </summary>
-        private static int workload { get { return 30; } }
+        private static int workload { get { return int.Parse(ConfigurationManager.AppSettings["WorkLoadAmount"]); } }
         #endregion
 
         #region METHODS

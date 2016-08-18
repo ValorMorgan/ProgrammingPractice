@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProgrammingPractice;
 using ProgrammingPractice.UI.MVC.Controllers;
 
 namespace ProgrammingPractice.Tests.Controllers

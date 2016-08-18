@@ -53,7 +53,7 @@
       <Project>{d8786fa8-dd42-43a4-b1cf-02d99bea2985}</Project>
       <Name>ProgrammingPractice.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ProgrammingPractice.ErrorHandling\ProgrammingPractice.Error.csproj">
+    <ProjectReference Include="..\ProgrammingPractice.Error\ProgrammingPractice.Error.csproj">
       <Project>{dfb16f4b-6000-46db-8c9f-a72befc61e8a}</Project>
       <Name>ProgrammingPractice.Error</Name>
     </ProjectReference>
