@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Configuration;
 
-namespace ProgrammingPractice.Services
+namespace ProgrammingPractice.UI.MVC.Services
 {
 
     public static class WebConfigurationPropertyService

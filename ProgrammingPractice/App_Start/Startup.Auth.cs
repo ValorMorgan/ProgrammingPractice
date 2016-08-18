@@ -5,9 +5,9 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using ProgrammingPractice.Models;
+using ProgrammingPractice.UI.MVC.Models;
 
-namespace ProgrammingPractice
+namespace ProgrammingPractice.UI.MVC
 {
     public partial class Startup
     {
