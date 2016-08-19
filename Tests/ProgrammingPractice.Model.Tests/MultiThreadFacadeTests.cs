@@ -12,19 +12,22 @@ namespace ProgrammingPractice.Model.Tests
     [TestClass]
     public class MultiThreadFacadeTests
     {
+        #region VARIABLES
+        IMultiThreadFacade _multiThreadFacade = new MultiThreadFacade();
+        CancellationToken _token = new CancellationToken();
+        #endregion
+
         [TestMethod]
         public void SingleThread_TimeToComplete_AsFastAsExpected()
         {
-            IMultiThreadFacade multiThreadFacade = new MultiThreadFacade();
-            CancellationToken token = new CancellationToken();
 
             // Time the actual process
             Stopwatch watch = Stopwatch.StartNew();
-            multiThreadFacade.SingleThread(token);
+            _multiThreadFacade.SingleThread(_token);
             watch.Stop();
 
             // Setup details
-            double expected = multiThreadFacade.workload * TimeSpan.FromSeconds(1).TotalSeconds;
+            double expected = _multiThreadFacade.workload * TimeSpan.FromSeconds(1).TotalSeconds;
             double result = watch.Elapsed.TotalSeconds;
             double delta = TimeSpan.FromSeconds(0.5).TotalSeconds;
 
@@ -35,22 +38,19 @@ namespace ProgrammingPractice.Model.Tests
         [TestMethod]
         public void MultiThread_TimeToComplete_FasterThanExpected()
         {
-            IMultiThreadFacade multiThreadFacade = new MultiThreadFacade();
-            CancellationToken token = new CancellationToken();
             ParallelOptions options = new ParallelOptions();
 
             // Time the actual process
             Stopwatch watch = Stopwatch.StartNew();
-            multiThreadFacade.MultiThread(token);
+            _multiThreadFacade.MultiThread(_token);
             watch.Stop();
 
             // Setup details
-            double expected = multiThreadFacade.workload * TimeSpan.FromSeconds(1).TotalSeconds;
+            double expected = _multiThreadFacade.workload * TimeSpan.FromSeconds(1).TotalSeconds;
             double result = watch.Elapsed.TotalSeconds;
 
             // Check if passed
             PerformanceService.CheckFasterThanExpectedTime(expected, result);
-
         }
     }
 }
