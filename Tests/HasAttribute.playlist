@@ -1,0 +1,1 @@
+<Playlist Version="1.0"><Add Test="ProgrammingPractice.Tests.Controllers.Ajax_Controllers.MultiThreadAjaxControllerTest.SingleThread_AcceptsHTTPGetOnly_HasAttribute" /><Add Test="ProgrammingPractice.Tests.Controllers.Ajax_Controllers.MultiThreadAjaxControllerTest.MultiThread_AcceptsHTTPGetOnly_HasAttribute" /></Playlist>

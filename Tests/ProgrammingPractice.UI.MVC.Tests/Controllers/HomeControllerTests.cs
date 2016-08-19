@@ -9,10 +9,10 @@ using ProgrammingPractice.UI.MVC.Controllers;
 namespace ProgrammingPractice.Tests.Controllers
 {
     [TestClass]
-    public class HomeControllerTest
+    public class HomeControllerTests
     {
         [TestMethod]
-        public void Index()
+        public void Index_ViewExists_ViewReturned()
         {
             // Arrange
             HomeController controller = new HomeController();
@@ -25,7 +25,7 @@ namespace ProgrammingPractice.Tests.Controllers
         }
 
         [TestMethod]
-        public void About()
+        public void About_ViewExists_ViewReturned()
         {
             // Arrange
             HomeController controller = new HomeController();
@@ -38,7 +38,7 @@ namespace ProgrammingPractice.Tests.Controllers
         }
 
         [TestMethod]
-        public void Author()
+        public void Author_ViewExists_ViewReturned()
         {
             // Arrange
             HomeController controller = new HomeController();

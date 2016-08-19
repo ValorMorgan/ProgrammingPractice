@@ -11,10 +11,10 @@ using ProgrammingPractice.UI.MVC.Controllers;
 namespace ProgrammingPractice.Tests.Controllers
 {
     [TestClass]
-    public class MultiThreadControllerTest : Controller
+    public class MultiThreadControllerTests : Controller
     {
         [TestMethod]
-        public void Index()
+        public void Index_ViewExists_ViewReturned()
         {
             // Arrange
             MultiThreadController controller = new MultiThreadController();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProgrammingPractice.Service
 {
-    public static class WebService
+    public class WebService
     {
         #region METHODS
         #endregion

@@ -1,0 +1,1 @@
+<Playlist Version="1.0"><Add Test="ProgrammingPractice.Model.Tests.MultiThreadFacadeTest.MultiThread_TimeToComplete_FasterThanExpected" /><Add Test="ProgrammingPractice.Model.Tests.MultiThreadFacadeTest.SingleThread_TimeToComplete_AsFastAsExpected" /></Playlist>

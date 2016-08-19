@@ -4,17 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{10A67A8A-492E-44E1-9B1D-E62B8149BC04}</ProjectGuid>
+    <ProjectGuid>{F8B86B29-A80D-4F62-B944-35FAFA5F654A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProgrammingPractice.Model</RootNamespace>
-    <AssemblyName>ProgrammingPractice.Model</AssemblyName>
+    <RootNamespace>ProgrammingPractice.Configuration</RootNamespace>
+    <AssemblyName>ProgrammingPractice.Configuration</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,22 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MultiThreadFacade.cs" />
+    <Compile Include="ApplicationSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProgrammingPractice.Configuration\ProgrammingPractice.Configuration.csproj">
-      <Project>{f8b86b29-a80d-4f62-b944-35fafa5f654a}</Project>
-      <Name>ProgrammingPractice.Configuration</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ProgrammingPractice.Data\ProgrammingPractice.Data.csproj">
-      <Project>{d8786fa8-dd42-43a4-b1cf-02d99bea2985}</Project>
-      <Name>ProgrammingPractice.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ProgrammingPractice.Error\ProgrammingPractice.Error.csproj">
-      <Project>{dfb16f4b-6000-46db-8c9f-a72befc61e8a}</Project>
-      <Name>ProgrammingPractice.Error</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ProgrammingPractice.Interfaces\ProgrammingPractice.Interfaces.csproj">
       <Project>{b65e72f9-396d-47f2-a2e7-6effc8261356}</Project>
       <Name>ProgrammingPractice.Interfaces</Name>

@@ -13,8 +13,6 @@ namespace ProgrammingPractice.UI.MVC.Controllers.Ajax_Controllers
     /// </summary>
     public class ClientInformationAjaxController : Controller
     {
-        private object ajaxSuccess = new { success = true, message = string.Empty };
-
         /// <summary>
         /// Generates a Guid for the Client to hold in localStorage.
         /// </summary>

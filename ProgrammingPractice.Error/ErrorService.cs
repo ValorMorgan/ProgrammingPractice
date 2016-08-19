@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Configuration;
 using System.Runtime.CompilerServices;
+using ProgrammingPractice.Interfaces;
+using ProgrammingPractice.Configuration;
 
 namespace ProgrammingPractice.Error
 {
@@ -28,12 +29,14 @@ namespace ProgrammingPractice.Error
         public static string LocalDomainStackTrace(Exception ex, System.Type domain,
             [CallerMemberName] string memberName = "")
         {
+            IApplicationSettings applicationSettings = new ApplicationSettings();
+
             int sourceLineNumber = GetSourceLineNumber(ex);
 
             // Setup stack trace so that the latest call is on top
             string currentMessage = string.Format("at {0}.{1} ({2})", domain.ToString(), memberName, sourceLineNumber);
             string previousMessage = "";
-            object messageRecord = ex.Data[ConfigurationManager.AppSettings["ExceptionDomainStackTrace"]];
+            object messageRecord = ex.Data[applicationSettings["ExceptionDomainStackTrace"]];
 
             // A check is performed to confirm we already started the stack trace
             if (messageRecord != null)
@@ -48,10 +51,12 @@ namespace ProgrammingPractice.Error
         /// <param name="ex">The exception to be logged.</param>
         public static void LogException(Exception ex)
         {
+            IApplicationSettings applicationSettings = new ApplicationSettings();
+
             // Log Details
-            string logSource = ConfigurationManager.AppSettings["ExceptionLogSource"];
+            string logSource = applicationSettings["ExceptionLogSource"];
             EventLogEntryType logEntryType = EventLogEntryType.Error;
-            int logId = int.Parse(ConfigurationManager.AppSettings["ExceptionLogId"]);
+            int logId = int.Parse(applicationSettings["ExceptionLogId"]);
 
             // Header
             string logHeader = string.Format("[{0}] {1}", DateTime.Now.ToString(), ex.Message);
@@ -60,7 +65,7 @@ namespace ProgrammingPractice.Error
             string logInnerException = string.Format("Inner Exception: {0}", (ex.InnerException != null) ? ex.InnerException.ToString() : "N/A");
 
             // Body
-            object domainStackTrace = ex.Data[ConfigurationManager.AppSettings["ExceptionDomainStackTrace"]];
+            object domainStackTrace = ex.Data[applicationSettings["ExceptionDomainStackTrace"]];
             string logExceptionType = string.Format("Exception Type: {0}", ex.GetType().ToString());
             string logStackTrace = string.Format("System Stack Trace\n{0}", ex.StackTrace);
             string logMessage;

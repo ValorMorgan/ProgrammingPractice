@@ -1,25 +1,30 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Configuration;
 using ProgrammingPractice.Error;
+using ProgrammingPractice.Interfaces;
+using ProgrammingPractice.Configuration;
 
 namespace ProgrammingPractice.Model
 {
-    public static class MultiThreadFacade
+    public class MultiThreadFacade : IMultiThreadFacade
     {
         #region VARIABLES
+        IApplicationSettings _applicationSettings = new ApplicationSettings();
+        #endregion
+
+        #region PROPERTIES
         /// <summary>
         /// The cumulative workload for the tasks.
         /// </summary>
-        private static int workload { get { return int.Parse(ConfigurationManager.AppSettings["WorkLoadAmount"]); } }
+        public int workload { get { return int.Parse(_applicationSettings["WorkLoadAmount"]); } }
         #endregion
 
         #region METHODS
         /// <summary>
         /// Test on processing the workload in a single thread.
         /// </summary>
-        public static void SingleThread(CancellationToken token)
+        public void SingleThread(CancellationToken token)
         {
             try
             {
@@ -33,7 +38,7 @@ namespace ProgrammingPractice.Model
             }
             catch (Exception ex)
             {
-                ex.Data[ConfigurationManager.AppSettings["ExceptionDomainStackTrace"]] = ErrorService.LocalDomainStackTrace(ex, typeof(MultiThreadFacade));
+                ex.Data[_applicationSettings["ExceptionDomainStackTrace"]] = ErrorService.LocalDomainStackTrace(ex, typeof(MultiThreadFacade));
                 throw ex;
             }
         }
@@ -41,7 +46,7 @@ namespace ProgrammingPractice.Model
         /// <summary>
         /// Test on processing the workload in multithread.
         /// </summary>
-        public static void MultiThread(CancellationToken token)
+        public void MultiThread(CancellationToken token)
         {
             try
             {
@@ -55,7 +60,7 @@ namespace ProgrammingPractice.Model
             }
             catch (Exception ex)
             {
-                ex.Data[ConfigurationManager.AppSettings["ExceptionDomainStackTrace"]] = ErrorService.LocalDomainStackTrace(ex, typeof(MultiThreadFacade));
+                ex.Data[_applicationSettings["ExceptionDomainStackTrace"]] = ErrorService.LocalDomainStackTrace(ex, typeof(MultiThreadFacade));
                 throw ex;
             }
         }

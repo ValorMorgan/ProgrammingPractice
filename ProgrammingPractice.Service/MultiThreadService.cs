@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Threading;
-using System.Configuration;
+using ProgrammingPractice.Interfaces;
 using ProgrammingPractice.Error;
+using ProgrammingPractice.Configuration;
 using ProgrammingPractice.Model;
 
 namespace ProgrammingPractice.Service
@@ -10,21 +11,26 @@ namespace ProgrammingPractice.Service
     /// Access point from UI to perform operations for
     /// MultiThreading.
     /// </summary>
-    public static class MultiThreadService
+    public class MultiThreadService : IMultiThreadService
     {
+        #region VARIABLES
+        IApplicationSettings _applicationSettings = new ApplicationSettings();
+        IMultiThreadFacade _multiThreadFacade = new MultiThreadFacade();
+        #endregion
+
         #region METHODS
         /// <summary>
         /// Test on processing the workload in a single thread.
         /// </summary>
-        public static void SingleThread(CancellationToken token)
+        public void SingleThread(CancellationToken token)
         {
             try
             {
-                MultiThreadFacade.SingleThread(token);
+                _multiThreadFacade.SingleThread(token);
             }
             catch (Exception ex)
             {
-                ex.Data[ConfigurationManager.AppSettings["ExceptionDomainStackTrace"]] = ErrorService.LocalDomainStackTrace(ex, typeof(MultiThreadService));
+                ex.Data[_applicationSettings["ExceptionDomainStackTrace"]] = ErrorService.LocalDomainStackTrace(ex, typeof(MultiThreadService));
                 ErrorService.LogException(ex);
                 throw ex;
             }
@@ -33,15 +39,15 @@ namespace ProgrammingPractice.Service
         /// <summary>
         /// Test on processing the workload in multithread.
         /// </summary>
-        public static void MultiThread(CancellationToken token)
+        public void MultiThread(CancellationToken token)
         {
             try
             {
-                MultiThreadFacade.MultiThread(token);
+                _multiThreadFacade.MultiThread(token);
             }
             catch (Exception ex)
             {
-                ex.Data[ConfigurationManager.AppSettings["ExceptionDomainStackTrace"]] = ErrorService.LocalDomainStackTrace(ex, typeof(MultiThreadService));
+                ex.Data[_applicationSettings["ExceptionDomainStackTrace"]] = ErrorService.LocalDomainStackTrace(ex, typeof(MultiThreadService));
                 ErrorService.LogException(ex);
                 throw ex;
             }

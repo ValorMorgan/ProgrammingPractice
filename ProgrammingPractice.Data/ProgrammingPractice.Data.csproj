@@ -47,6 +47,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ProgrammingPractice.Configuration\ProgrammingPractice.Configuration.csproj">
+      <Project>{f8b86b29-a80d-4f62-b944-35fafa5f654a}</Project>
+      <Name>ProgrammingPractice.Configuration</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ProgrammingPractice.Error\ProgrammingPractice.Error.csproj">
       <Project>{dfb16f4b-6000-46db-8c9f-a72befc61e8a}</Project>
       <Name>ProgrammingPractice.Error</Name>

@@ -35,7 +35,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -49,6 +48,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ProgrammingPractice.Configuration\ProgrammingPractice.Configuration.csproj">
+      <Project>{f8b86b29-a80d-4f62-b944-35fafa5f654a}</Project>
+      <Name>ProgrammingPractice.Configuration</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ProgrammingPractice.Interfaces\ProgrammingPractice.Interfaces.csproj">
       <Project>{b65e72f9-396d-47f2-a2e7-6effc8261356}</Project>
       <Name>ProgrammingPractice.Interfaces</Name>

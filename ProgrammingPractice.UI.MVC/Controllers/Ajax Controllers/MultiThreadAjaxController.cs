@@ -3,6 +3,7 @@ using System.Net;
 using System.Web.Mvc;
 using System.Threading;
 using System.Threading.Tasks;
+using ProgrammingPractice.Interfaces;
 using ProgrammingPractice.Service;
 
 namespace ProgrammingPractice.UI.MVC.Controllers.Ajax_Controllers
@@ -13,9 +14,13 @@ namespace ProgrammingPractice.UI.MVC.Controllers.Ajax_Controllers
     /// </summary>
     public class MultiThreadAjaxController : Controller
     {
-        private object ajaxSuccess = new { success = true, message = string.Empty };
-        private CancellationTokenSource singleThreadTokenSource;
-        private CancellationTokenSource multiThreadTokenSource;
+        #region VARIABLES
+        IMultiThreadService _service = new MultiThreadService();
+
+        private object _ajaxSuccess = new { success = true, message = string.Empty };
+        private CancellationTokenSource _singleThreadTokenSource;
+        private CancellationTokenSource _multiThreadTokenSource;
+        #endregion
 
         /// <summary>
         /// Performs an operation over a single thread.  Used to compare
@@ -30,16 +35,16 @@ namespace ProgrammingPractice.UI.MVC.Controllers.Ajax_Controllers
 
             try
             {
-                if (singleThreadTokenSource == null)
+                if (_singleThreadTokenSource == null)
                 {
-                    singleThreadTokenSource = new CancellationTokenSource();
-                    HttpContext.Cache[cacheName] = singleThreadTokenSource;
+                    _singleThreadTokenSource = new CancellationTokenSource();
+                    HttpContext.Cache[cacheName] = _singleThreadTokenSource;
                 }
 
                 // Opening new Task with a Cancelation token
                 Task task = Task.Run(() => {
-                    MultiThreadService.SingleThread(singleThreadTokenSource.Token);
-                }, singleThreadTokenSource.Token);
+                    _service.SingleThread(_singleThreadTokenSource.Token);
+                }, _singleThreadTokenSource.Token);
 
                 // Don't finish this method until the Task is done
                 // Otherwise UI updates as 100% complete.
@@ -52,7 +57,7 @@ namespace ProgrammingPractice.UI.MVC.Controllers.Ajax_Controllers
                 return Json(new HttpStatusCodeResult(HttpStatusCode.BadRequest, ex.Message));
             }
 
-            return Json(ajaxSuccess);
+            return Json(_ajaxSuccess);
         }
 
         /// <summary>
@@ -64,10 +69,10 @@ namespace ProgrammingPractice.UI.MVC.Controllers.Ajax_Controllers
             // ie singleThreadTokenSource_f1fd7650-fecf-4cee-952c-f4569698317c
             string cacheName = string.Format("singleThreadTokenSource_{0}", HttpContext.Request.Params["clientId"]);
 
-            if (singleThreadTokenSource == null)
-                singleThreadTokenSource = HttpContext.Cache[cacheName] as CancellationTokenSource;
+            if (_singleThreadTokenSource == null)
+                _singleThreadTokenSource = HttpContext.Cache[cacheName] as CancellationTokenSource;
 
-            singleThreadTokenSource.Cancel();
+            _singleThreadTokenSource.Cancel();
             (HttpContext.Cache[cacheName] as CancellationTokenSource).Dispose();
         }
 
@@ -84,16 +89,16 @@ namespace ProgrammingPractice.UI.MVC.Controllers.Ajax_Controllers
 
             try
             {
-                if (multiThreadTokenSource == null)
+                if (_multiThreadTokenSource == null)
                 {
-                    multiThreadTokenSource = new CancellationTokenSource();
-                    HttpContext.Cache[cacheName] = multiThreadTokenSource;
+                    _multiThreadTokenSource = new CancellationTokenSource();
+                    HttpContext.Cache[cacheName] = _multiThreadTokenSource;
                 }
 
                 // Opening new Task with a Cancelation token
                 Task task = Task.Run(() => {
-                    MultiThreadService.MultiThread(multiThreadTokenSource.Token);
-                }, multiThreadTokenSource.Token);
+                    _service.MultiThread(_multiThreadTokenSource.Token);
+                }, _multiThreadTokenSource.Token);
 
                 // Don't finish this method until the Task is done
                 // Otherwise UI updates as 100% complete.
@@ -106,7 +111,7 @@ namespace ProgrammingPractice.UI.MVC.Controllers.Ajax_Controllers
                 return Json(new HttpStatusCodeResult(HttpStatusCode.BadRequest, ex.Message));
             }
 
-            return Json(ajaxSuccess);
+            return Json(_ajaxSuccess);
         }
 
         /// <summary>
@@ -118,10 +123,10 @@ namespace ProgrammingPractice.UI.MVC.Controllers.Ajax_Controllers
             // ie multiThreadTokenSource_f1fd7650-fecf-4cee-952c-f4569698317c
             string cacheName = string.Format("multiThreadTokenSource_{0}", HttpContext.Request.Params["clientId"]);
 
-            if (multiThreadTokenSource == null)
-                multiThreadTokenSource = HttpContext.Cache[cacheName] as CancellationTokenSource;
+            if (_multiThreadTokenSource == null)
+                _multiThreadTokenSource = HttpContext.Cache[cacheName] as CancellationTokenSource;
 
-            multiThreadTokenSource.Cancel();
+            _multiThreadTokenSource.Cancel();
             (HttpContext.Cache[cacheName] as CancellationTokenSource).Dispose();
         }
     }

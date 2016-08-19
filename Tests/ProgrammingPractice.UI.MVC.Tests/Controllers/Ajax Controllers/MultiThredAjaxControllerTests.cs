@@ -9,10 +9,10 @@ using ProgrammingPractice.UI.MVC.Controllers.Ajax_Controllers;
 namespace ProgrammingPractice.Tests.Controllers.Ajax_Controllers
 {
     [TestClass]
-    public class MultiThreadAjaxControllerTest
+    public class MultiThreadAjaxControllerTests
     {
         [TestMethod]
-        public void SingleThread()
+        public void SingleThread_AcceptsHTTPGetOnly_HasAttribute()
         {
             MethodBase method = typeof(MultiThreadAjaxController).GetMethod("SingleThread");
 
@@ -21,7 +21,7 @@ namespace ProgrammingPractice.Tests.Controllers.Ajax_Controllers
         }
 
         [TestMethod]
-        public void MultiThread()
+        public void MultiThread_AcceptsHTTPGetOnly_HasAttribute()
         {
             MethodBase method = typeof(MultiThreadAjaxController).GetMethod("MultiThread");
 
