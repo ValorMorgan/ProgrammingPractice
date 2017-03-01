@@ -2,7 +2,6 @@
 using System.Threading;
 using ProgrammingPractice.Interfaces;
 using ProgrammingPractice.Error;
-using ProgrammingPractice.Configuration;
 using ProgrammingPractice.Model;
 
 namespace ProgrammingPractice.Service
@@ -14,8 +13,7 @@ namespace ProgrammingPractice.Service
     public class MultiThreadService : IMultiThreadService
     {
         #region VARIABLES
-        IApplicationSettings _applicationSettings = new ApplicationSettings();
-        IMultiThreadFacade _multiThreadFacade = new MultiThreadFacade();
+        private readonly IMultiThreadFacade _multiThreadFacade = new MultiThreadFacade();
         #endregion
 
         #region METHODS
@@ -30,9 +28,8 @@ namespace ProgrammingPractice.Service
             }
             catch (Exception ex)
             {
-                ex.Data[_applicationSettings["ExceptionDomainStackTrace"]] = ErrorService.LocalDomainStackTrace(ex, typeof(MultiThreadService));
-                ErrorService.LogException(ex);
-                throw ex;
+                Logger.LogException(ex);
+                throw;
             }
         }
 
@@ -47,9 +44,8 @@ namespace ProgrammingPractice.Service
             }
             catch (Exception ex)
             {
-                ex.Data[_applicationSettings["ExceptionDomainStackTrace"]] = ErrorService.LocalDomainStackTrace(ex, typeof(MultiThreadService));
-                ErrorService.LogException(ex);
-                throw ex;
+                Logger.LogException(ex);
+                throw;
             }
         }
         #endregion

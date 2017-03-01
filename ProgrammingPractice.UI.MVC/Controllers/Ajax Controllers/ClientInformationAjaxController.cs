@@ -28,6 +28,7 @@ namespace ProgrammingPractice.UI.MVC.Controllers.Ajax_Controllers
             }
             catch (Exception ex)
             {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
                 HttpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
                 HttpContext.Response.TrySkipIisCustomErrors = true;
                 return Json(new HttpStatusCodeResult(HttpStatusCode.BadRequest, ex.Message));

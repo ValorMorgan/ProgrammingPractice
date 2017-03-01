@@ -1,20 +1,36 @@
-﻿/*===============================================
-                MultiThread
-===============================================*/
+﻿/**
+ * @file Provides MultiThread page functionalities for performing calls down to
+ * the server.
+ * @author Joshua Morgan
+ * @since 1.0.0.0
+ */
 
 /*=============================
            Variables
 =============================*/
+/**
+ * Flag informing if the timers were initiated or not.
+ * @type {boolean}
+ */
 var timersInitiated = false;
+/**
+ * The singleThread gauge object.
+ * @type {liquidFillGauge}
+ */
 var gauagSingleThread = null;
+/**
+ * The multiThread gauge object.
+ * @type {liquidFillGauge}
+ */
 var gaugeMultiThread = null;
 
 /*=============================
            Methods
 =============================*/
-/** Sets the timers to begin counting up from 0.
- *  Parameters:
- *    reset: true/false if the timers should be reset to 0.
+/**
+ * @function SetTimers
+ * @description Sets the timers to begin counting up from 0.
+ * @param {boolean} reset - Whether or not to reset to the timers.
  */
 function SetTimers(reset) {
     if (timersInitiated && reset) {
@@ -29,8 +45,10 @@ function SetTimers(reset) {
     timersInitiated = true;
 }
 
-/** Sets the fill gauges with their default style as well as
- *  resetting their value to 0.
+/**
+ * @function SetFillGauges
+ * @description Sets the fill gauges with their default style as well as
+ * resetting their value to 0.
  */
 function SetFillGauges() {
     var fillGaugeConfig = liquidFillGaugeDefaultSettings();
@@ -56,10 +74,12 @@ function SetFillGauges() {
     }
 }
 
-/** Begins the SingleThread fill gauge by
- *  calling the server to perform an operation.
- *  Also adds a window.unload event to cancel
- *  the operation if it is still going.
+/**
+ * @function StartSingleThread
+ * @description  Begins the SingleThread fill gauge by
+ * calling the server to perform an operation.
+ * Also adds a window.unload event to cancel
+ * the operation if it is still going.
  */
 function StartSingleThread() {
     var fillgauge = $('#multiThread-compare-multiThread');
@@ -92,14 +112,20 @@ function StartSingleThread() {
                 clientId: clientId
             },
             async: true
+        }).fail(function (xhr) {
+            console.log('Failed to cancel single thread processing!');
+        }).done(function () {
+            console.log('Single thread processing successfully canceled.');
         });
     });
 }
 
-/** Begins the MultiThread fill gauge by
- *  calling the server to perform an operation.
- *  Also adds a window.unload event to cancel
- *  the operation if it is still going.
+/**
+ * @function StartMultiThread
+ * @description Begins the MultiThread fill gauge by
+ * calling the server to perform an operation.
+ * Also adds a window.unload event to cancel
+ * the operation if it is still going.
  */
 function StartMultiThread() {
     var fillgauge = $('#multiThread-compare-multiThread');
@@ -132,6 +158,10 @@ function StartMultiThread() {
                 clientId: clientId
             },
             async: true
+        }).fail(function (xhr) {
+            console.log('Failed to cancel multithread processing!');
+        }).done(function () {
+            console.log('Mutlithread processing successfully canceled.');
         });
     });
 }
@@ -139,7 +169,9 @@ function StartMultiThread() {
 /*=============================
            Events
 =============================*/
-/** Initial load event to initialize gauages and timers
+/**
+ * Initial load event to initialize gauages and timers
+ * @listens module:window~event:load
  */
 $(window).load(function () {
     SetFillGauges();

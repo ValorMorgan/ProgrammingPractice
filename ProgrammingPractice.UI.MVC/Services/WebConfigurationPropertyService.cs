@@ -20,18 +20,19 @@ namespace ProgrammingPractice.UI.MVC.Services
             return !String.IsNullOrEmpty(key)
                 && ConfigurationManager.AppSettings.AllKeys.Select((string x) => x).Contains(key);
         }
-        
+
         /// <summary>
         /// Retrieves the property value associated with the provided key.
         /// </summary>
         /// <param name="key">The property to search for.</param>
         /// <returns>The value of the property if one exists. Returns an empty string otherwise.</returns>
+        /// <exception cref="NullReferenceException">If the app setting is not found.</exception>
         public static string ReadProperty(string key)
         {
-            string value = String.Empty;
             if (WebConfigurationPropertyService.HasProperty(key))
-                value = ConfigurationManager.AppSettings[key];
-            return value;
+                return ConfigurationManager.AppSettings[key];
+            else
+                throw new NullReferenceException(string.Format("{0} could not be found in the AppSettings.", key));
         }
         #endregion
     }

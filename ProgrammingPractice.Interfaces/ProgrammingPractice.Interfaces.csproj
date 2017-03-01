@@ -44,7 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IApplicationSettings.cs" />
     <Compile Include="IMultiThreadFacade.cs" />
     <Compile Include="IMultiThreadService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
